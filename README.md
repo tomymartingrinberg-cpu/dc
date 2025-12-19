@@ -1,27 +1,19 @@
-# Proyecto Avión ASCII
+# Proyecto Avión ASCII (avion) - Versión 2025
 
-Este paquete contiene una animación ASCII del avión Boeing 747, con un diseño claro y simétrico.
+[![Release](https://img.shields.io/github/v/release/tomasmartingrinberg-cpu/dc?color=blue&label=Versi%C3%B3n)](https://github.com/tomasmartingrinberg-cpu/dc/releases)
+[![License](https://img.shields.io/badge/Licencia-Toyoda-green)](LICENSE)
+[![Platform](https://img.shields.io/badge/Plataforma-Linux%20%7C%20BSD-lightgrey)](docs/INSTALL.md)
 
-## Instalación
+Una animación ASCII minimalista y elegante de un avión sobrevolando tu terminal, escrita en Bash y optimizada para múltiples distribuciones Linux.
 
-Solo clona o descarga el paquete y ejecuta el script `dc` para ver la animación.
-
-## Contenido
-
-- `avion`: Variable con el diseño ASCII del avión.
-- Script `dc`: Comando Bash para animar el avión.
-
-## Uso
-
-Ejecuta:
-
-dc
-
-para ver el avión animado en tu terminal.
-
-##  Instrucciones
-
-Vea la carpeta docs para mas informacion sobre los paquetes
 ---
 
-¡Disfrutá el vuelo ASCII!
+## Instalación Rápida
+
+Si tienes `make` y `ncurses` instalados, puedes tenerlo listo en segundos:
+
+```bash
+git clone [https://github.com/tomasmartingrinberg-cpu/dc.git](https://github.com/tomasmartingrinberg-cpu/dc.git)
+cd dc
+make
+sudo make install
