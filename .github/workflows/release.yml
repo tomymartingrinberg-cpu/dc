@@ -1,0 +1,40 @@
+name: Publicar Versión 25.0
+
+on:
+  push:
+    tags:
+      - 'v*' # Se activa al subir un tag como v25.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Configurar scripts
+        run: chmod +x build_packages.sh release.sh
+
+      - name: Generar Archivos de Empaquetado
+        run: ./build_packages.sh
+
+      - name: Crear Tarball de la Fuente
+        run: |
+          VERSION="25.0"
+          TEMP_DIR="dc-$VERSION"
+          mkdir -p "$TEMP_DIR"
+          cp dc.sh Makefile LICENSE README.md "$TEMP_DIR/"
+          tar -czf "avion-$VERSION.tar.gz" "$TEMP_DIR"
+
+      - name: Crear Release en GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            avion-25.0.tar.gz
+            packaging/**
+          name: Versión 25.0 (Año 2025)
+          body: |
+            Lanzamiento automático para múltiples distribuciones.
+            Incluye soporte para Arch, Debian, RPM, Gentoo, y más.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
