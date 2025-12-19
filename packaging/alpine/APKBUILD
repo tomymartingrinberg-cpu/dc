@@ -1,0 +1,14 @@
+pkgname=avion
+pkgver=25.0
+pkgrel=0
+pkgdesc="Avion ASCII animado v25.0"
+url="https://github.com/tomasmartingrinberg-cpu/dc"
+arch="noarch"
+license="Toyoda"
+depends="bash ncurses"
+makedepends="make"
+source="$pkgname-$pkgver.tar.gz::https://github.com/tomasmartingrinberg-cpu/dc/archive/v25.0.tar.gz"
+
+package() {
+	make DESTDIR="$pkgdir" PREFIX=/usr install
+}

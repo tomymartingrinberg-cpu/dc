@@ -1,0 +1,16 @@
+pkgname=avion
+pkgver=25.0
+pkgrel=1
+pkgdesc="Animacion ASCII de un avion en la terminal (Bash)"
+arch=('any')
+url="https://github.com/tomasmartingrinberg-cpu/dc"
+license=('Toyoda')
+depends=('bash' 'ncurses')
+makedepends=('make')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/tomasmartingrinberg-cpu/dc/archive/refs/tags/v25.0.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    cd "$srcdir/dc-25.0"
+    make DESTDIR="$pkgdir" PREFIX=/usr install
+}

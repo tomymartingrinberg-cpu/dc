@@ -1,0 +1,12 @@
+Source: avion
+Section: utils
+Priority: optional
+Maintainer: Tomy <tomy.martin.grinberg@.com>
+Build-Depends: debhelper (>= 12), make
+Standards-Version: 4.5.0
+
+Package: avion
+Architecture: all
+Depends: bash, ncurses-bin, ${misc:Depends}
+Description: Avion ASCII animado v25.0
+ Script en Bash que muestra un avion volando.
